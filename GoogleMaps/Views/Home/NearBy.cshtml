@@ -1,0 +1,44 @@
+﻿@{
+	ViewBag.Title = "NearBy";
+}
+
+<h2>NearBy Location</h2>
+
+<table>
+	<tr>
+		<td>
+			@Html.TextBox("keyword", "Valsad, Gujarat, India", new { @id = "Location" })
+		</td>
+		<td>
+			@* get more option from :::  https://developers.google.com/places/supported_types  *@
+			<select id="type">
+				<option>shops</option>
+				<option>restaurant</option>
+				<option>school</option>
+				<option>airport</option>
+				<option>bank</option>
+				<option>book_store</option>
+				<option>doctor</option>
+				<option>police</option>
+				<option>funeral_home</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="googleMap" style="width: 520px; height: 380px;"></div>
+		</td>
+		<td>
+			<div id="results"></div>
+		</td>
+	</tr>
+</table>
+<br />
+
+
+@section Scripts {
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCiksx3_coNWgHnwDnkH5DUA-OahWGGJbg&libraries=places"></script>
+	<script src="~/Scripts/NearByLocation.js"></script>
+}
+
+

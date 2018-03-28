@@ -1,0 +1,50 @@
+﻿@{
+	ViewBag.Title = "CalculateDistance";
+}
+
+<h2>CalculateDistance</h2>
+
+<table>
+	<tr>
+		<td>
+			Source:
+			@*<input type="text" id="txtSource" value="Bandra, Mumbai, India" style="width: 200px" />*@
+			@Html.TextBox("txtSource", "Bandra, Mumbai, India", new { @id = "txtSource" })
+		</td>
+		<td>
+			Destination:
+			@*<input type="text" id="txtDestination" value="Andheri, Mumbai, India" style="width: 200px" />*@
+			@Html.TextBox("txtDestination", "Valsad, Gujarat, India", new { @id = "txtDestination" })
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<button type="button" onclick="GetRoute()">Get Route</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div id="dvDistance">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="dvMap" style="width: 500px; height: 500px">
+			</div>
+		</td>
+		<td>
+			<div id="dvPanel" style="width: 500px; height: 500px">
+			</div>
+		</td>
+	</tr>
+</table>
+
+@section Scripts{
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCiksx3_coNWgHnwDnkH5DUA-OahWGGJbg&libraries=places"></script>
+	@*<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiksx3_coNWgHnwDnkH5DUA-OahWGGJbg&libraries=places&callback=initMap">
+		</script>*@
+
+	<script src="~/Scripts/calculateDistance.js"></script>
+}

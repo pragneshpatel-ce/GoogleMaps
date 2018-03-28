@@ -1,0 +1,31 @@
+﻿@{
+	ViewBag.Title = "StaticMap";
+}
+<style>
+	#map {
+		height: 400px;
+		width: 100%;
+	}
+</style>
+<h2>StaticMap</h2>
+<br />
+<div id="map"></div>
+
+@section Scripts{
+	<script>
+		function initMap() {
+			var uluru = { lat: 20.5992349, lng: 72.9342451 };
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 4,
+				center: uluru
+			});
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map
+			});
+		}
+	</script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiksx3_coNWgHnwDnkH5DUA-OahWGGJbg&callback=initMap">
+	</script>
+}

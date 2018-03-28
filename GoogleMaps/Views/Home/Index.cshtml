@@ -1,0 +1,33 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+<h2>Find Location on Map</h2>
+<table>
+	<tr>
+		<td>
+			<label for="Currency">Enter Location</label>
+			@Html.TextBox("Location", "", new { @class = "form-control", @id = "Location", @placeholder = "Enter Location" })
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label for="Currency">Latitude</label>
+			@Html.TextBox("Latitude", "", new { @class = "form-control lat", @readonly = "readonly" })
+		</td>
+		<td>
+			<label for="Currency">Longitude</label>
+			@Html.TextBox("Longitude", "", new { @class = "form-control long", @readonly = "readonly" })
+		</td>
+	</tr>
+</table>
+<div id="googleMap" style="width: 520px; height: 380px;"></div>
+
+@section Scripts {
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCiksx3_coNWgHnwDnkH5DUA-OahWGGJbg&libraries=places"></script>
+	<script src="~/Scripts/googlemap.js"></script>
+	<script>
+		$(document).ready(function () {
+
+		});
+	</script>
+}
